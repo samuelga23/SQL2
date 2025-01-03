@@ -24,3 +24,16 @@ SELECT name FROM users WHERE email= "samuelgal2016@gmail.com" ORDER BY age DESC;
 SELECT * FROM users WHERE email LIKE "%gmail.com";
 "EL comando Like nos sirve para hacer busquedas especificas de campos que tengan un valor de coindidencia, en este caso el gmail.com, que junto el % a la izquierda
 hace que se omita o no cuennte lo que esta a la izquierda del gmail.com para que nos pueda retornar la consulta con aquellos usuarios con un gmail.com " 
+
+SELECT * FROM users WHERE email LIKE "samuelgal2016@gmail.com";
+SELECT * FROM users WHERE email LIKE "samuelgal2016%";
+"ambas lineas SQL nos traeran aquellas columnas que coincidan con la consulta, o sea el correo samuelgal2016@gmail.com"
+
+SELECT * FROM users WHERE NOT email = "samuelgal2016@gmail.com";
+"NOT es un limitador, es la negacion en este caso de la condicion WHERE"
+
+SELECT * FROM users WHERE NOT email = "samuelgal2016@gmail.com" AND age =20;
+"AND un condicional que se utiliza para complementar otra condicion, en la cual ambas se deben cumplir, en este caso que el correo no sea *** y que la edad sea 20"
+
+SELECT * FROM users WHERE NOT email = "samuelgal2016@gmail.com" OR age =20;
+"OR otro condicional en el que alguna de las condicones debe ser cierta para que se nos muestre la consulta"

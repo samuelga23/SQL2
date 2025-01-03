@@ -97,3 +97,31 @@ SELECT vendedor, SUM(cantidad) AS total_vendido FROM ventas GROUP BY vendedor HA
 /*En MySQL, HAVING generalmente se usa junto con GROUP BY para filtrar resultados después de agrupar datos. Si no agrupas los datos, no tiene sentido usar HAVING
 porque no hay grupos sobre los que aplicar las condiciones.
 El HAVING en MySQL se utiliza para filtrar los resultados de una consulta después de que se hayan aplicado las funciones de agregación (SUM, COUNT, AVG, etc.).*/
+
+
+SELECT *,
+CASE
+	WHEN age >=18 THEN 'Es mayor de edad'
+    ELSE 'Es menor de edad'
+END AS 'mayor o menor'
+FROM users;
+------------------->>>>>>-------------------------
+SELECT *,
+CASE
+	WHEN age >=18 THEN TRUE
+    ELSE FALSE
+END AS 'mayor o menor'
+FROM users;
+
+/*Las consultas en SQL a partir de ahora se escribiran de forma vertical para mayor legibilidad, en este caso utilizamos el comando CASE que vendria a funcionar de igual manera
+que un IF, en este caso CUANDO la edad sea mayor o igual a 18 ENTONCES, se crea una nueva columna que dentro del campo correspendiente saldra el mensaje, es mayor de edad,
+SINO pues vendria a ser menor de edad, el case se cierra con un END y utilizamos un AS para darle un alias a la nueva columna, tambien se pueden trabajar con valores boleeanos
+como el true y false*/
+
+SELECT *,
+CASE
+	WHEN age >18 THEN 'Es mayor de edad'
+    WHEN age = 18 THEN 'Acaba de cumplir 18'
+    ELSE 'Es menor de edad'
+END AS 'mayor o menor'
+FROM users;

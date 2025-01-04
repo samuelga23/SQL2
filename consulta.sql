@@ -125,3 +125,7 @@ CASE
     ELSE 'Es menor de edad'
 END AS 'mayor o menor'
 FROM users;
+
+SELECT name,surname,
+IFNULL(age,0) AS age FROM users;
+--EL iffnull nos ayuda a darle un valor a aquellos campos que sean nulos

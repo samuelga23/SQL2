@@ -2,6 +2,8 @@
 --Not NUll, en este caso el campo que este marcado con esta caracteristica no podra estar vacio o nulo
 --Auto icremental, la base de datos autoincrementa un numero, por ejemplo el ID
 --Unique, hace que el dato sea unico, no se puede repetir, por ejemplo un correo electronico
+--check, esta restriccion nos sirve para checkear que dato ingresado cumpla con cierto requisito, por ejemplo que la edad sea mayor o igual a 18
+--Default, cuando se estan creando las filas y algunos de los campos de determinada columna se dejan null, podemos establecer valores predeterminados
 
 SELECT * FROM users;
 SELECT name FROM users;

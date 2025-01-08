@@ -1,4 +1,4 @@
---Primary Key, la clave primaria es una manera de que un campo sea unico y no sea nulo, y es una forma de identificar filas, por ejemplo un ID
+--Primary Key, la clave primaria es una manera de que un campo sea unico y no sea nulo, y es una forma de identificar filas y relacionar tablas
 --Not NUll, en este caso el campo que este marcado con esta caracteristica no podra estar vacio o nulo
 --Auto icremental, la base de datos autoincrementa un numero, por ejemplo el ID
 --Unique, hace que el dato sea unico, no se puede repetir, por ejemplo un correo electronico

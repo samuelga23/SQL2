@@ -70,7 +70,7 @@ DROP COLUMN description;
 
 ---BASE DE DATOS RELACIONADAS
 
-CREATE TABLE usuarios( ----------------------> Creamos la tabla persons2
+CREATE TABLE usuarios( ----------------------> Creamos la tabla usuarios
     id INT AUTO_INCREMENT PRIMARY KEY, ------> id que viene a ser la clave primaria de la tabla, el id que va dar referencia a cada fila de la tabla, referencia de los usurios
     name VARCHAR(50) NOT NULL, ---------> nombre del usurario
     age INT NOT NULL, -------> edad del usuario
@@ -84,7 +84,7 @@ CREATE TABLE dni -----------------------------> Creamos la tabla dni
 	dni_id INT AUTO_INCREMENT PRIMARY KEY,  ------> dni_id que viene a ser la clave primaria de la tabla, nos sirve como referencia del numero de dni
 	dni_number INT NOT NULL UNIQUE, -------------> dni_number que viene a ser el numero de identificacion del usuario        
 	id int,                         -------------> Creamos una columna id, haciendo referencia a la columna id de la tabla de usuarios          
-	FOREIGN KEY (id) REFERENCES persons2(id) ----> Establecemos la columna id como clave foranea de la tabla dni
+	FOREIGN KEY (id) REFERENCES usuarios(id) ----> Establecemos la columna id como clave foranea de la tabla dni
 );
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ ADD area_id INT; ---------> Aañadimos la nueva columna, que viene a ser area_id
                  --------- de la tabla area
 
 
-ALTER TABLE persons2 -----> modificamos la tabla usuarios
+ALTER TABLE usuarios -----> modificamos la tabla usuarios
 ADD CONSTRAINT FK_area ----> añadimos un constraint especifico para el nombre de la clave foranea
 FOREIGN KEY (area_id) REFERENCES area(area_id); --------- añadimos la clave foranea especificando que es la nueva columna creada y haciendo referencia a la clave primaria
                                                 ----- de la tabla area

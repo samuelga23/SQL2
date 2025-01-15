@@ -75,3 +75,67 @@ LEFT JOIN usuarios
 ON usuarios.user_id  = dni.user_id;
 /*en este caso, es al contrario, hacemos el select sobre la tabla dni, ahora la tabla dni es el de la izquierda y como en la tabla dni cada numero de dni tiene asignado
 a un usuario, ninguno se nos mostrara como null*/
+
+SELECT name, name_lenguaje from usuarios
+LEFT JOIN usuarios_lenguajes
+ON usuarios_lenguajes.user_id = usuarios.user_id
+LEFT JOIN lenguajes
+ON usuarios_lenguajes.lenguaje_id = lenguajes.lenguaje_id
+ORDER BY usuario_lenguaje_id ASC;
+
+
+/*RIGH JOIN,  este nos trae todos los campos de la tabla de la derecha (la tabla sobre la que hacemos el RIGHT JOIN), nos trae las filas que cumplan con la condicion de 
+coincidencia y aquellas que no las cumplan, las marca como null en los campos especificos*/
+
+SELECT * FROM dni
+RIGHT JOIN usuarios
+ON usuarios.user_id  = dni.user_id;
+/*Hacemos el right join sobre la tabla usuarios, es decir, traera a todos las filas de esa tabla y se uniera junto con la tabla dni, en este caso aquellos usuarios con un dni
+se nos mostrara y aquellos que no, seran nulos*/
+SELECT name, dni_number FROM dni
+RIGHT JOIN usuarios
+ON usuarios.user_id  = dni.user_id;
+
+
+
+SELECT * FROM usuarios 
+RIGHT JOIN dni 
+ON usuarios.user_id  = dni.user_id;
+/*Ahora como el right join esta sobre la tabla dni, nos traera todas las filas de esa tabla, pero como en la tabla dni todas las filas estan relacionadas a un usuario
+ninguna se nos mostrara como nulo*/
+SELECT name, dni_number FROM usuarios 
+RIGHT JOIN dni 
+ON usuarios.user_id  = dni.user_id;
+
+
+/* EN ESTE MODO ESTAS CONSULTAS DE RIGHT JOIN Y LEFT JOIN NOS MOSTRARA LO MISMO PERO ESCRITA DE MANERA CONTRARIA*/
+
+SELECT name, dni_number FROM dni                   SELECT name, dni_number FROM usuarios 
+LEFT JOIN usuarios                       =         RIGHT JOIN dni 
+ON usuarios.user_id  = dni.user_id;                ON usuarios.user_id  = dni.user_id
+
+/*ACA EL JOIN SE ESTA HACIENDO SOBRE LA TABLA DNI Y COMO EN LA TABLA DNI CADA FILA ESTA RELACIONA A UN USUARIO, NINGUNO DNI_NUMBER SE NOS MOSTRARA COMO NULO*/
+
+
+SELECT name, dni_number FROM dni                   SELECT name, dni_number FROM usuarios 
+RIGHT JOIN usuarios                      =         LEFT JOIN dni 
+ON usuarios.user_id  = dni.user_id;                ON usuarios.user_id  = dni.user_id;
+
+/*ACA EL JOIN SE ESTA HACIENDO SOBRE LA TABLA USUARIOS Y COMO EN LA TABLA USUARIOS HAY USUARIOS QUE NO TIENEN UN DNI_NUMBER REGISTRADO EN LA TABLA DNI, AQUELLOS
+USUARIOS SIN DNI SE MARCARAN COMO NULOS*/
+
+/*
+Reglas básicas del UNION:
+Número de columnas: Todas las consultas deben tener el mismo número de columnas en los resultados.
+Tipo de datos: Los tipos de datos de las columnas correspondientes en las consultas deben ser compatibles.
+Orden: Los datos de las columnas se combinan en el orden en que se listan en las consultas.
+*/
+
+SELECT name from usuarios 
+UNION 
+SELECT dni_number FROM dni
+
+SELECT name,age from usuarios 
+UNION 
+SELECT dni_number, dni_id FROM dni
+

@@ -83,6 +83,12 @@ LEFT JOIN lenguajes
 ON usuarios_lenguajes.lenguaje_id = lenguajes.lenguaje_id
 ORDER BY usuario_lenguaje_id ASC;
 
+SELECT name,name_lenguaje from  usuarios_lenguajes
+LEFT JOIN usuarios
+ON usuarios_lenguajes.user_id = usuarios.user_id
+LEFT JOIN lenguajes
+ON usuarios_lenguajes.lenguaje_id = lenguajes.lenguaje_id
+ORDER BY usuario_lenguaje_id ASC;
 
 /*RIGH JOIN,  este nos trae todos los campos de la tabla de la derecha (la tabla sobre la que hacemos el RIGHT JOIN), nos trae las filas que cumplan con la condicion de 
 coincidencia y aquellas que no las cumplan, las marca como null en los campos especificos*/

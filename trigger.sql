@@ -56,3 +56,6 @@ DELIMITER ;
 UPDATE usuarios --- actualizamos la tabla usuarios
 SET email = 'sharyckcoley@gmail.com' -- la columna email con el nuevo correo
 WHERE user_id = 3 -- para el usuario con el identifcador 3
+
+
+DROP TRIGGER TG_email --Eliminar trigger-- 

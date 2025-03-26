@@ -110,7 +110,7 @@ FOREIGN KEY (area_id) REFERENCES area(area_id); --------- añadimos la clave for
 
 CREATE TABLE lenguajes -------> creamos la tabla lenguajes
 (
-	lenguaje_id INT AUTO_INCREMENT PRIMARY KEY, ------> establecemos la clave primario
+	lenguaje_id INT AUTO_INCREMENT PRIMARY KEY, ------> establecemos la clave primaria
     name_lenguaje VARCHAR (50) -----> creamos una columna que va a contener el nombre del lenguaje, representado por un id
 );
 

@@ -9,3 +9,5 @@ WHERE age>=18;
 --Creamos una vista de la tabla (una consulta definida) usuarios para que se nos muestre el nombre y la edad de aquellos usuarios mayores de edad--
 
 SELECT * FROM v_usuarios_edades --(Mostramos la vista que hemos creado)--
+
+DROP VIEW v_usuarios_edades --Eliminar vista--
